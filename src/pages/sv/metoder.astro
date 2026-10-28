@@ -9,7 +9,7 @@ import { displayDate } from '../../lib/format';
 const lang = 'sv';
 const path = route('method', lang);
 const title = 'Klämdagar och röda dagar: beräkningsmetoder och lagrum';
-const description = 'Så räknar SE Röda dagar: helgdagarna ur lagen (1989:253), påsk enligt Gauss, aftnarna i semesterlagen, optimeraren för klämdagar, skollov och testerna.';
+const description = 'Så räknar Rödadag: helgdagarna ur lagen (1989:253), påsk enligt Gauss, aftnarna i semesterlagen, optimeraren för klämdagar, skollov per kommun och testerna.';
 const s = (k: string, t: string) => srcLink(k, lang, t);
 const d = (x: string) => displayDate(x, 'sv-SE');
 const p10 = K.optimera(2027, 10, { aftnar: true });
@@ -28,8 +28,8 @@ const v1 = K.isoVecka('2027-01-01'), v53 = K.veckorIAret(2026);
 ---
 <PageLayout title={title} description={description} lang={lang} jsonLd={[webPageSchema({ name: 'Beräkningsmetoder', description, path, lang }), breadcrumbSchema([{ name: 'Start', path: route('home', lang) }, { name: 'Beräkningsmetoder', path }])]} breadcrumbs={[{ label: 'Beräkningsmetoder' }]}>
   <article class="prose prose-slate max-w-none">
-    <h1>Så räknar SE Röda dagar</h1>
-    <p>SE Röda dagar räknar fram varje röd dag, afton, klämdag, arbetsdag och vecka ur reglerna i svensk lag i stället för att skriva av en färdig kalender. Grunden är lagen (1989:253) om allmänna helgdagar, som räknar upp tretton helgdagar utöver söndagarna och anger hur de rörliga dagarna bestäms. Semesterlagen avgör vilka dagar som inte räknas som semesterdagar, och lagen om beräkning av lagstadgad tid säger vad som händer när en frist slutar på en helgdag eller afton. Påsken räknas med Gauss formel och kontrolleras mot en andra algoritm. Skollov tas bara från kommunernas egna beslut. All beräkning sker i webbläsaren, och automatiska tester körs vid varje ändring för att samma regel ska ge samma svar på varje sida.</p>
+    <h1>Så räknar Rödadag</h1>
+    <p>Rödadag räknar fram varje röd dag, afton, klämdag, arbetsdag och vecka ur reglerna i svensk lag i stället för att skriva av en färdig kalender. Grunden är lagen (1989:253) om allmänna helgdagar, som räknar upp tretton helgdagar utöver söndagarna och anger hur de rörliga dagarna bestäms. Semesterlagen avgör vilka dagar som inte räknas som semesterdagar, och lagen om beräkning av lagstadgad tid säger vad som händer när en frist slutar på en helgdag eller afton. Påsken räknas med Gauss formel och kontrolleras mot en andra algoritm. Skollov tas bara från kommunernas egna beslut. All beräkning sker i webbläsaren, och automatiska tester körs vid varje ändring för att samma regel ska ge samma svar på varje sida.</p>
     <p>Varje verktyg körs i din webbläsare; år, semesterdagar och kommun lämnar inte din enhet. Reglerna kommer ur lagar och förordningar hos Riksdagen, senast lästa {d(K.P.retrieved_at)}, och lovdatumen ur kommunernas egna beslut.</p>
     <h2>De tretton helgdagarna</h2>
     <p>Sverige har en enda förteckning: <Fragment set:html={s('helgdagslag', '1 § lagen (1989:253) om allmänna helgdagar')} />, senast ändrad genom SFS {K.P.helgdagslagAndrad}, då nationaldagen blev helgdag och annandag pingst ströks. Utöver söndagarna är det nyårsdagen, trettondedag jul, långfredagen, påskdagen, annandag påsk, första maj, Kristi himmelsfärdsdag, pingstdagen, nationaldagen, midsommardagen, alla helgons dag, juldagen och annandag jul. Lagens 2 § ger datumen. Midsommardagen är lördagen mellan 20 och 26 juni och alla helgons dag lördagen mellan 31 oktober och 6 november; därför ligger de alltid på en lördag. En helgdag som infaller på en helg flyttas inte.</p>

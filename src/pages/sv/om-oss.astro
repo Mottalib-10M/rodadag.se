@@ -7,8 +7,8 @@ import { srcLink } from '../../lib/helpers';
 import { profilePageSchema, breadcrumbSchema } from '../../lib/seo';
 const lang = 'sv';
 const path = route('about', lang);
-const title = 'SE Röda dagar: utgivare, källor och oberoende i Sverige';
-const description = 'Vem som ger ut SE Röda dagar: Radif Partners, oberoende och utan reseerbjudanden. Var röda dagar, aftnar, semesterregler och skollov per kommun kommer ifrån.';
+const title = 'Om Rödadag: vem som ger ut sidan, källor och oberoende';
+const description = 'Vem som ger ut Rödadag: Radif Partners, oberoende och utan reseerbjudanden. Var röda dagar, aftnar, semesterregler och skollov per kommun kommer ifrån.';
 const s = (k: string, t: string) => srcLink(k, lang, t);
 ---
 <PageLayout title={title} description={description} lang={lang} jsonLd={[profilePageSchema({ path, lang }), breadcrumbSchema([{ name: 'Start', path: route('home', lang) }, { name: 'Om oss', path }])]} breadcrumbs={[{ label: 'Om oss' }]}>

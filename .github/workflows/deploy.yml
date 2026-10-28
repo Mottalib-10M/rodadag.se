@@ -1,6 +1,6 @@
 name: deploy
 
-# Publie le site sur GitHub Pages à chaque push sur main.
+# Publie le site sur GitHub Pages à chaque push sur main, puis ping IndexNow
 on:
   push:
     branches: [main]
@@ -41,3 +41,8 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+      - name: Checkout (script IndexNow)
+        uses: actions/checkout@v4
+      - name: Ping IndexNow
+        continue-on-error: true
+        run: bash scripts/indexnow.sh https://rodadag.se

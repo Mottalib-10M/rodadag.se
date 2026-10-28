@@ -9,7 +9,7 @@ import { displayDate } from '../../lib/format';
 const lang = 'en';
 const path = route('method', lang);
 const title = 'Bridge Days Sweden: Method, Legal Sources and Tests';
-const description = 'How SE Röda dagar calculates: holidays from Act 1989:253, Easter by Gauss, the eves under the Annual Leave Act, the bridge-day optimiser, school breaks, tests.';
+const description = 'How Rödadag calculates: holidays from Act 1989:253, Easter by Gauss, the eves under the Annual Leave Act, the bridge-day optimiser, school breaks, tests.';
 const s = (k: string, t: string) => srcLink(k, lang, t);
 const d = (x: string) => displayDate(x, 'en');
 const p10 = K.optimera(2027, 10, { aftnar: true });
@@ -17,7 +17,7 @@ const at27 = K.arbetsdagar(2027, { aftnar: true }).reduce((a, b) => a + b, 0);
 ---
 <PageLayout title={title} description={description} lang={lang} jsonLd={[webPageSchema({ name: 'Method', description, path, lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'Method', path }])]} breadcrumbs={[{ label: 'Method' }]}>
   <article class="prose prose-slate max-w-none">
-    <h1>How SE Röda dagar calculates</h1>
+    <h1>How Rödadag calculates</h1>
     <p>Every tool runs in your browser; year, leave days and municipality never leave your device. The rules come from statutes published by the Riksdag, last read on {d(K.P.retrieved_at)}, and school-break dates from each municipality's own decisions.</p>
     <h2>The thirteen public holidays</h2>
     <p>Sweden has a single list: <Fragment set:html={s('helgdagslag', 'section 1 of the Public Holidays Act (1989:253)')} />, last amended by SFS {K.P.helgdagslagAndrad}, which made National Day a holiday and removed Whit Monday. Besides Sundays it names New Year's Day, Epiphany, Good Friday, Easter Sunday, Easter Monday, May Day, Ascension Day, Whit Sunday, National Day, Midsummer Day, All Saints' Day, Christmas Day and Boxing Day. Section 2 gives the dates. Midsummer Day is the Saturday between 20 and 26 June and All Saints' Day the Saturday between 31 October and 6 November, so both always fall on a Saturday. A holiday that lands at a weekend is not moved.</p>

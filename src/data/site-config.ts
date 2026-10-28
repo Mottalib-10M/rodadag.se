@@ -1,8 +1,8 @@
 /** Configuration centrale du site (générée par new-site.py). */
-export const SITE_URL = "https://se-roda-dagar.example";
-export const SITE_NAMES: Record<string, string> = {"sv": "SE Röda dagar", "en": "SE Röda dagar"};
+export const SITE_URL = "https://rodadag.se";
+export const SITE_NAMES: Record<string, string> = {"sv": "Rödadag", "en": "Rödadag"};
 // Partie du nom affichée en couleur dans l'en-tête (RECETTE §10.3), « » pour aucune.
-export const BRAND_ACCENT = "Röda dagar";
+export const BRAND_ACCENT = "Röda";
 /** Locale des nombres et des dates : suédois de Suède et anglais britannique. */
 export const NUM_TAGS: Record<string, string> = {"sv": "sv-SE", "en": "en-GB"};
 export const LANG_TAGS: Record<string, string> = {"sv": "sv-SE", "en": "en-SE"};
@@ -20,7 +20,7 @@ export const AUTHOR_DESC: Record<string, string> = {"sv": "Radif Partners läser
  *  themes reellement traites par le site, pas une liste de mots-cles : un sujet
  *  declare ici sans page qui le couvre est une declaration fausse. */
 export const KNOWS_ABOUT: Record<string, string[]> = {"sv": ["Allmänna helgdagar i Sverige (lag 1989:253)", "Klämdagar och semesterplanering", "Semesterdagar enligt semesterlagen", "Skollov i svenska kommuner", "Sommartid och veckonummer enligt ISO 8601"], "en": ["Public holidays in Sweden", "Bridge days and leave planning", "Annual leave days under the Swedish Annual Leave Act", "School holidays in Swedish municipalities", "Summer time and ISO 8601 week numbers"]};
-export const CONTACT_EMAIL = "kontakt@se-roda-dagar.example";
+export const CONTACT_EMAIL = "contact@rodadag.se";
 export const THEME_COLOR = '#006AA7';
 export const LOGO_SYMBOL = 'RD';
 export const BING_VERIFY_CODE = '';
