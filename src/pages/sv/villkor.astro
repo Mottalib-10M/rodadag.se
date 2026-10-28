@@ -1,0 +1,32 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { AUTHOR_NAME, CLARITY_ID, CONTACT_EMAIL, GA4_ID, LAST_UPDATED, LEGAL, SITE_NAMES, SITE_URL } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'sv';
+const title = `Utgivare och villkor för ${SITE_NAMES[lang]}`;
+const description = 'Utgivare, ansvarig för innehållet, webbvärd, ingen rådgivning, upphovsrätt, personuppgifter och tillämplig lag för den här webbplatsen.';
+---
+<PageLayout title={title} description={description} lang={lang} noindex={true} breadcrumbs={[{ label: 'Utgivare och villkor' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Utgivare och villkor</h1>
+    <p>Uppgifter om utgivaren och villkoren för att använda {SITE_URL}.</p>
+    <h2>Utgivare</h2>
+    <LegalIdentity lang={lang} />
+    <p>Ansvarig för innehållet: {AUTHOR_NAME}, adress enligt ovan.</p>
+    <h2>Webbvärd</h2>
+    <LegalIdentity mode="hosting" lang={lang} />
+    <h2>Syfte och ingen rådgivning</h2>
+    <p>Webbplatsen erbjuder kostnadsfria verktyg och guider som information. Resultaten bygger på de officiella regler som anges på varje sida; de är varken personlig rådgivning, beslut eller åtagande från någon myndighet, kommun eller arbetsgivare. Metod och begränsningar: <a href={route('method', lang)}>beräkningsmetoder</a>.</p>
+    <h2>Ansvar</h2>
+    <p>Regler och datum uppdateras och beräkningarna kontrolleras mot kända fall, men utan garanti för att fel saknas. Utgivaren ansvarar inte för beslut som bara bygger på en beräkning här. Rapportera fel via <a href={route('contact', lang)}>kontaktsidan</a>.</p>
+    <h2>Upphovsrätt</h2>
+    <p>Texter, utformning och kod tillhör utgivaren; korta citat med länk till ursprungssidan är välkomna.</p>
+    <h2>Personuppgifter och kakor</h2>
+    {GA4_ID ? (<p>Det du skriver i verktygen stannar i din webbläsare. Webbplatsen använder kakor från Google Analytics för besöksstatistik (<code>_ga</code>, <code>_ga_{GA4_ID.replace('G-', '')}</code>, högst 13 månader), utan reklam{CLARITY_ID && '; sidornas stabilitet mäts med Microsoft Clarity utan kakor'}. Detaljer: <a href={route('privacy', lang)}>integritetspolicy</a> och sidan <a href={route('cookies', lang)}>cookies</a>.</p>) : (<p>Det du skriver i verktygen stannar i din webbläsare och webbplatsen sätter inga kakor{CLARITY_ID && '; sidornas stabilitet mäts anonymt med Microsoft Clarity utan kakor'}. Se <a href={route('privacy', lang)}>integritetspolicyn</a> och sidan <a href={route('cookies', lang)}>cookies</a>.</p>)}
+    <h2>Anmälan av olagligt innehåll</h2>
+    <p>Anmäl olagligt innehåll till <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> med sidans adress och skälet.</p>
+    <h2>Tillämplig lag</h2>
+    <p>Fransk lag gäller. Om ingen uppgörelse nås är domstolarna i {LEGAL.jurisdiction} behöriga. Senast ändrad: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

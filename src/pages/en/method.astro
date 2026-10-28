@@ -1,0 +1,41 @@
+---
+/** Method : Public Holidays Act, Easter, eves, leave days, optimiser, school breaks, tests, limits. */
+import PageLayout from '../../layouts/PageLayout.astro';
+import { route } from '../../i18n/routes';
+import { KIT as K } from '../../lib/kit';
+import { srcLink } from '../../lib/helpers';
+import { breadcrumbSchema, webPageSchema } from '../../lib/seo';
+import { displayDate } from '../../lib/format';
+const lang = 'en';
+const path = route('method', lang);
+const title = 'Bridge Days Sweden: Method, Legal Sources and Tests';
+const description = 'How SE Röda dagar calculates: holidays from Act 1989:253, Easter by Gauss, the eves under the Annual Leave Act, the bridge-day optimiser, school breaks, tests.';
+const s = (k: string, t: string) => srcLink(k, lang, t);
+const d = (x: string) => displayDate(x, 'en');
+const p10 = K.optimera(2027, 10, { aftnar: true });
+const at27 = K.arbetsdagar(2027, { aftnar: true }).reduce((a, b) => a + b, 0);
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[webPageSchema({ name: 'Method', description, path, lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'Method', path }])]} breadcrumbs={[{ label: 'Method' }]}>
+  <article class="prose prose-slate max-w-none">
+    <h1>How SE Röda dagar calculates</h1>
+    <p>Every tool runs in your browser; year, leave days and municipality never leave your device. The rules come from statutes published by the Riksdag, last read on {d(K.P.retrieved_at)}, and school-break dates from each municipality's own decisions.</p>
+    <h2>The thirteen public holidays</h2>
+    <p>Sweden has a single list: <Fragment set:html={s('helgdagslag', 'section 1 of the Public Holidays Act (1989:253)')} />, last amended by SFS {K.P.helgdagslagAndrad}, which made National Day a holiday and removed Whit Monday. Besides Sundays it names New Year's Day, Epiphany, Good Friday, Easter Sunday, Easter Monday, May Day, Ascension Day, Whit Sunday, National Day, Midsummer Day, All Saints' Day, Christmas Day and Boxing Day. Section 2 gives the dates. Midsummer Day is the Saturday between 20 and 26 June and All Saints' Day the Saturday between 31 October and 6 November, so both always fall on a Saturday. A holiday that lands at a weekend is not moved.</p>
+    <h2>Easter</h2>
+    <p>Easter Sunday comes from <Fragment set:html={s('pask-ptb', "Gauss's Easter formula")} />. Good Friday is two days earlier, Easter Monday one day later, Ascension Day 39 and Whit Sunday 49 days after Easter Sunday. A second, independent algorithm (Meeus, Jones, Butcher) recomputes every year from 1600 to 2600 and both agree. In 2027 Easter Sunday is {d(K.paskdagen(2027))}.</p>
+    <h2>The eves</h2>
+    <p>Midsummer Eve, Christmas Eve and New Year's Eve are not public holidays. But <Fragment set:html={s('semesterlag', 'section 3a of the Annual Leave Act')} /> treats them like Sundays, so they never count as leave days, and <Fragment set:html={s('lagstadgadtid', 'section 2 of the 1930 Act on statutory time limits')} /> moves a deadline that ends on them to the next weekday. The tools therefore treat them as days off when planning leave, with a switch for those who work. Other eves, such as Walpurgis Night and Maundy Thursday, count as working days.</p>
+    <h2>The optimiser</h2>
+    <p>The year is split into blocks: free blocks of weekends, holidays and eves, and working blocks of weekdays. Taking leave for a whole working block merges the free blocks on each side. A dynamic programme tries every combination and picks the one with the most consecutive days off, and on a tie the one that uses fewer leave days. Each chain must touch a holiday; leave that no longer extends a bridge is shown as free to plan. Example for 2027: ten leave days give {p10.ledig} days off in {p10.block.length} blocks. The same year has {at27} working days.</p>
+    <h2>School breaks</h2>
+    <p>No national rule sets the breaks. The <Fragment set:html={s('skolforordning', 'Education Ordinance')} /> requires at least {K.P.skola.skoldagar} school days and {K.P.skola.lovdagar} holiday days and lets the school organiser decide term dates. We therefore show only dates that 24 municipalities have published themselves, linking each one. Where a municipality has not decided yet, the tool says "not published yet".</p>
+    <h2>Time and countdowns</h2>
+    <p>Countdowns run to midnight Swedish time. Summer time starts on the last Sunday in March and ends on the last Sunday in October under the <Fragment set:html={s('sommartid', 'Summer Time Ordinance (2001:127)')} />. Your device converts the time left into your own time zone.</p>
+    <h2>Tests</h2>
+    <p>Automated tests check on every change the Easter dates, that Midsummer Day and All Saints' Day stay on Saturdays inside the legal windows for a century, the number of holidays, bridge days, working days, leave days under section 3a, the deadline rule, week numbers, summer time and that every school-break date is a weekday.</p>
+    <h2>Limits</h2>
+    <p>The tools know nothing of collective agreements, shift rotas or extra leave. Saved leave days and holiday pay are not covered. Municipalities may change break dates; their own notice is what counts.</p>
+    <h2>Updates</h2>
+    <p>We reread the statutes regularly and after every amendment. Report errors on the <a href={route('contact', lang)}>contact page</a>; how we correct them is in the <a href={route('editorial', lang)}>editorial policy</a>.</p>
+  </article>
+</PageLayout>

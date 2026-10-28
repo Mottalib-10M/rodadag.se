@@ -1,0 +1,20 @@
+{
+ "accent": "#006AA7",
+ "symbol": "RD",
+ "variants": [
+  {
+   "file": "og-sv.png",
+   "title": "Klämdagar 2027\nflest lediga dagar, minst semester",
+   "subtitle": "Röda dagar 2026 till 2028 · semesterplanerare · skollov",
+   "badge": "Enligt lagen (1989:253), kontrollerad 28 oktober 2026",
+   "brand": "SE Röda dagar"
+  },
+  {
+   "file": "og-en.png",
+   "title": "Bridge days Sweden 2027\nmore time off, fewer leave days",
+   "subtitle": "Public holidays 2026 to 2028 · leave planner · school breaks",
+   "badge": "From the Public Holidays Act, checked 28 October 2026",
+   "brand": "SE Röda dagar"
+  }
+ ]
+}

@@ -1,0 +1,61 @@
+---
+/** Metod : lagen om allmänna helgdagar, påsk, aftnar, semesterdagar, optimeraren, lov, tester, gränser. */
+import PageLayout from '../../layouts/PageLayout.astro';
+import { route } from '../../i18n/routes';
+import { KIT as K } from '../../lib/kit';
+import { srcLink, table } from '../../lib/helpers';
+import { breadcrumbSchema, webPageSchema } from '../../lib/seo';
+import { displayDate } from '../../lib/format';
+const lang = 'sv';
+const path = route('method', lang);
+const title = 'Klämdagar och röda dagar: beräkningsmetoder och lagrum';
+const description = 'Så räknar SE Röda dagar: helgdagarna ur lagen (1989:253), påsk enligt Gauss, aftnarna i semesterlagen, optimeraren för klämdagar, skollov och testerna.';
+const s = (k: string, t: string) => srcLink(k, lang, t);
+const d = (x: string) => displayDate(x, 'sv-SE');
+const p10 = K.optimera(2027, 10, { aftnar: true });
+const at27 = K.arbetsdagar(2027, { aftnar: true }).reduce((a, b) => a + b, 0);
+const regler: Record<string, string> = {
+  'nyarsdagen': '1 januari', 'trettondedag-jul': '6 januari', 'langfredagen': 'fredagen före påskdagen',
+  'paskdagen': 'söndagen efter den kyrkliga fullmånen på eller närmast efter 21 mars', 'annandag-pask': 'dagen efter påskdagen',
+  'forsta-maj': '1 maj', 'kristi-himmelsfard': 'sjätte torsdagen efter påskdagen', 'pingstdagen': 'sjunde söndagen efter påskdagen',
+  'nationaldagen': '6 juni', 'midsommardagen': 'lördagen 20–26 juni', 'alla-helgons-dag': 'lördagen 31 oktober–6 november',
+  'juldagen': '25 december', 'annandag-jul': '26 december',
+};
+const rader = K.HELGDAGAR.map((f) => [f.name.sv, regler[f.id], d(f.date(2027))]);
+const p27 = K.paskdagen(2027);
+const fr1 = K.nastaVardag('2027-06-25'), fr2 = K.nastaVardag('2027-12-24');
+const v1 = K.isoVecka('2027-01-01'), v53 = K.veckorIAret(2026);
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[webPageSchema({ name: 'Beräkningsmetoder', description, path, lang }), breadcrumbSchema([{ name: 'Start', path: route('home', lang) }, { name: 'Beräkningsmetoder', path }])]} breadcrumbs={[{ label: 'Beräkningsmetoder' }]}>
+  <article class="prose prose-slate max-w-none">
+    <h1>Så räknar SE Röda dagar</h1>
+    <p>SE Röda dagar räknar fram varje röd dag, afton, klämdag, arbetsdag och vecka ur reglerna i svensk lag i stället för att skriva av en färdig kalender. Grunden är lagen (1989:253) om allmänna helgdagar, som räknar upp tretton helgdagar utöver söndagarna och anger hur de rörliga dagarna bestäms. Semesterlagen avgör vilka dagar som inte räknas som semesterdagar, och lagen om beräkning av lagstadgad tid säger vad som händer när en frist slutar på en helgdag eller afton. Påsken räknas med Gauss formel och kontrolleras mot en andra algoritm. Skollov tas bara från kommunernas egna beslut. All beräkning sker i webbläsaren, och automatiska tester körs vid varje ändring för att samma regel ska ge samma svar på varje sida.</p>
+    <p>Varje verktyg körs i din webbläsare; år, semesterdagar och kommun lämnar inte din enhet. Reglerna kommer ur lagar och förordningar hos Riksdagen, senast lästa {d(K.P.retrieved_at)}, och lovdatumen ur kommunernas egna beslut.</p>
+    <h2>De tretton helgdagarna</h2>
+    <p>Sverige har en enda förteckning: <Fragment set:html={s('helgdagslag', '1 § lagen (1989:253) om allmänna helgdagar')} />, senast ändrad genom SFS {K.P.helgdagslagAndrad}, då nationaldagen blev helgdag och annandag pingst ströks. Utöver söndagarna är det nyårsdagen, trettondedag jul, långfredagen, påskdagen, annandag påsk, första maj, Kristi himmelsfärdsdag, pingstdagen, nationaldagen, midsommardagen, alla helgons dag, juldagen och annandag jul. Lagens 2 § ger datumen. Midsommardagen är lördagen mellan 20 och 26 juni och alla helgons dag lördagen mellan 31 oktober och 6 november; därför ligger de alltid på en lördag. En helgdag som infaller på en helg flyttas inte.</p>
+    <Fragment set:html={table(['Helgdag', 'Regel i 2 §', String(2027)], rader, `Lagens regler och datumen 2027`)} />
+    <h2>Påsken</h2>
+    <p>Påskdagen räknas med <Fragment set:html={s('pask-ptb', 'Gauss påskformel')} />. Långfredagen ligger två dagar före, annandag påsk en dag efter, Kristi himmelsfärdsdag 39 och pingstdagen 49 dagar efter påskdagen. En andra, oberoende algoritm (Meeus, Jones, Butcher) räknar om varje år från 1600 till 2600, och båda ger samma datum. {2027} är påskdagen den {d(K.paskdagen(2027))}.</p>
+    <p>Så här går Gauss formel till i korthet. Årtalet delas med 19, 4 och 7, och resterna avgör var den kyrkliga fullmånen hamnar i förhållande till den 21 mars och vilken veckodag den infaller på. Påskdagen blir den första söndagen efter fullmånen. Två undantag i formeln ser till att påsken aldrig infaller efter den 25 april. För {2027} ger räkningen den {d(p27)}, alltså en tidig påsk; i verktyget för påsk visas varje mellansteg med siffror.</p>
+    <h2>Aftnarna</h2>
+    <p>Midsommarafton, julafton och nyårsafton är inga helgdagar. Men <Fragment set:html={s('semesterlag', '3 a § semesterlagen')} /> jämställer dem med söndag, så de räknas aldrig som semesterdagar, och <Fragment set:html={s('lagstadgadtid', '2 § lagen om beräkning av lagstadgad tid')} /> flyttar en frist som slutar på dem till nästa vardag. Verktygen räknar dem därför som lediga i semesterplaneringen, med ett val för den som arbetar. Övriga aftnar, som valborgsmässoafton och skärtorsdagen, behandlas som arbetsdagar.</p>
+    <p>Två exempel på fristregeln: en frist som slutar på midsommarafton den 25 juni {2027} får mötas den {d(fr1)}, och en som slutar på julafton samma år den {d(fr2)}. Regeln gäller frister i lag och i myndighetsbeslut; avtal kan ha egna villkor.</p>
+    <h2>Arbetsdagar och veckor</h2>
+    <p>En arbetsdag är i våra beräkningar en måndag till fredag som inte är röd dag och, om du inte väljer annat, inte heller midsommar-, jul- eller nyårsafton. Lagen har ingen definition av arbetsdag; vi följer därför samma gräns som semesterlagen drar för semesterdagar. Arbetstidslagen ändrar inte räkningen, men kollektivavtal kan göra det, till exempel med förkortad arbetstid före helger.</p>
+    <p>Veckonumren följer standarden ISO 8601, som används i Sverige: vecka 1 är den vecka som innehåller årets första torsdag, och veckan börjar på måndag. Därför kan de första dagarna i januari höra till föregående års sista vecka. Den 1 januari {2027} ligger i vecka {v1.week} år {v1.year}, eftersom {2026} har {v53} veckor.</p>
+    <h2>Optimeraren</h2>
+    <p>Året delas i block: lediga block av helger, röda dagar och aftnar, och arbetsblock av vardagar. Tar man semester under ett helt arbetsblock smälter de lediga blocken på båda sidor ihop. En dynamisk programmering prövar alla kombinationer och väljer den som ger flest lediga dagar i rad, vid lika antal den som kräver färre semesterdagar. Varje kedja måste gränsa till en röd dag; dagar som inte längre förlänger en bro redovisas som fria att lägga. Exempel {2027}: tio semesterdagar ger {p10.ledig} lediga dagar i {p10.block.length} block. Samma år har {at27} arbetsdagar.</p>
+    <p>Optimeraren räknar bara dagar inom det valda året. En bro över nyår, som mellandagarna {2027}, räknas med semesterdagarna i december men med lediga dagar till och med första helgen i januari, eftersom det är så ledigheten upplevs. Längre arbetsblock än tio dagar räknas inte som bro; de motsvarar en vanlig semester och syns som fria dagar att lägga.</p>
+    <h2>Skollov</h2>
+    <p>Ingen nationell regel bestämmer loven. <Fragment set:html={s('skolforordning', 'Skolförordningen')} /> kräver minst {K.P.skola.skoldagar} skoldagar och {K.P.skola.lovdagar} lovdagar och låter huvudmannen bestämma terminernas början och slut. Vi visar därför bara datum som 24 kommuner själva har publicerat, med länk till varje kommuns sida. Har en kommun inte beslutat ännu står det ”inte publicerat än”.</p>
+    <p>För varje kommun visar vi höstlov, jullov, sportlov och påsklov för läsåret {2026}/{2027}, sommarlovets första dag och, där kommunen redan har beslutat, höstlovet {2027} och sportlovet {2028}. Jullovet räknas från dagen efter höstterminens sista dag till dagen före vårterminens första. Några kommuner publicerar bara veckonummer, och vissa skolor lägger egna studiedagar i anslutning till loven; det står vid respektive kommun.</p>
+    <h2>Tid och nedräkning</h2>
+    <p>Nedräkningarna räknar till midnatt svensk tid. Sommartiden börjar sista söndagen i mars och slutar sista söndagen i oktober enligt <Fragment set:html={s('sommartid', 'förordningen (2001:127) om sommartid')} />. Din enhet räknar om tiden till din egen tidszon.</p>
+    <h2>Tester</h2>
+    <p>Automatiska tester kontrollerar vid varje ändring påskdatumen, att midsommardagen och alla helgons dag alltid är lördagar inom lagens perioder i hundra år, antalet helgdagar, klämdagarna, arbetsdagarna, semesterdagarna enligt 3 a §, fristreglerna, veckonumren, sommartiden och att alla lovdatum är vardagar.</p>
+    <h2>Gränser</h2>
+    <p>Verktygen känner inte till kollektivavtal, skiftscheman eller kompletterande ledighet. Sparade semesterdagar och semesterlön ingår inte. Lovdatum kan ändras av kommunen; det som gäller är kommunens eget besked.</p>
+    <h2>Uppdatering</h2>
+    <p>Vi läser om lagtexterna regelbundet och efter varje ändring. Rapportera fel via <a href={route('contact', lang)}>kontaktsidan</a>; hur vi rättar står i de <a href={route('editorial', lang)}>redaktionella principerna</a>.</p>
+  </article>
+</PageLayout>

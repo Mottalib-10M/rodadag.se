@@ -1,0 +1,27 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, REVIEW_CYCLE_MONTHS } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { displayDate } from '../../lib/format';
+const lang = 'sv';
+---
+<PageLayout title="Redaktionella principer: källor, kontroll och rättelser" description="Var röda dagar, aftnar och skollov kommer ifrån, i vilken ordning vi läser källorna, hur vi testar planeraren och vad som händer när ett datum är fel." lang={lang} noindex={true} breadcrumbs={[{ label: 'Redaktionella principer' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Redaktionella principer och rättelser</h1>
+    <p>En felaktig röd dag kostar en semesterdag, ett felaktigt lovdatum en dag barnpassning. Här står var varje datum kommer ifrån och vad som händer när något inte stämmer.</p>
+    <h2>Ansvar</h2><p>Innehåll och verktyg ansvarar {AUTHOR_NAME} för. Kontakt: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>Källornas rangordning</h2>
+    <ol>
+      <li><strong>Lagar och förordningar</strong> i gällande lydelse hos Riksdagen: lagen om allmänna helgdagar, semesterlagen, lagen om beräkning av lagstadgad tid, förordningen om sommartid och skolförordningen;</li>
+      <li><strong>Kommunernas beslut</strong> om läsårstider och lov, så som kommunen själv publicerar dem på sin webbplats;</li>
+      <li><strong>Räkneregler</strong>: Gauss påskformel och veckonumrering enligt ISO 8601.</li>
+    </ol>
+    <p>Kalendersajter, resebyråer och tidningsartiklar är ingen källa. När något inte är bestämt, till exempel lov som en kommun ännu inte har beslutat om, skriver vi det rakt ut.</p>
+    <h2>Uträknat, inte avskrivet</h2><p>Inget datum på webbplatsen är inskrivet för hand. En räknekärna härleder varje röd dag ur lagens regel, till exempel ”lördagen mellan den 20 och 26 juni” eller ”39 dagar efter påskdagen”. Automatiska tester jämför påsken med en andra formel för tusen år och kontrollerar klämdagar, arbetsdagar och semesterdagar vid varje ändring.</p>
+    <h2>Takt</h2><p>Fullständig genomgång minst var {REVIEW_CYCLE_MONTHS}:e månad och efter varje lagändring. Lovdatum läses om när kommunerna beslutar om nästa läsår.</p>
+    <h2>När något är fel</h2>
+    <ol><li>Kontroll mot källan.</li><li>Rättelse av regeln eller datan och ett nytt test.</li><li>Nytt datum på alla sidor samtidigt.</li></ol>
+    <h2>Oberoende</h2><p>Inga pengar från resebolag, hotell, myndigheter eller fack. Inga partnerlänkar, inga betalda texter och inga formulär för att samla in kunder.</p>
+    <p>Se även <a href={route('method', lang)}>beräkningsmetoder</a>. Version av {displayDate(LAST_UPDATED, 'sv-SE')}.</p>
+  </div>
+</PageLayout>

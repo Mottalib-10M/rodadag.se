@@ -1,0 +1,47 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { CLARITY_ID, CONTACT_EMAIL, GA4_ID, LAST_UPDATED, LEGAL, SITE_NAMES, SITE_URL } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'sv';
+const title = `Integritetspolicy för ${SITE_NAMES[lang]}: dina uppgifter`;
+const description = GA4_ID ? 'Besöksstatistik med Google Analytics och kakor, utan reklam; det du skriver stannar i webbläsaren; webbvärdens loggar; dina rättigheter och tillsynsmyndigheten.' : 'Det du skriver stannar i webbläsaren, inga kakor, webbvärdens loggar: vilka uppgifter webbplatsen behandlar, dina rättigheter och tillsynsmyndigheten.';
+---
+<PageLayout title={title} description={description} lang={lang} noindex={true} breadcrumbs={[{ label: 'Integritet' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Integritetspolicy</h1>
+    <p>Den här sidan beskriver hur personuppgifter behandlas när du använder {SITE_URL}, enligt artiklarna 12–14 i dataskyddsförordningen (EU) 2016/679 (GDPR).</p>
+    <h2>1. Personuppgiftsansvarig</h2>
+    <LegalIdentity lang={lang} />
+    <p>Frågor om dina uppgifter: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Något dataskyddsombud är inte utsett, eftersom villkoren i artikel 37 inte är uppfyllda.</p>
+    <h2>2. Det du skriver stannar i webbläsaren</h2>
+    <p>Beräkningarna sker i din webbläsare. År, antal semesterdagar, datum och kommun <strong>skickas inte till någon server</strong>, sparas inte och kopplas inte till någon identitet. Webbplatsen kräver varken konto, namn eller e-postadress. En delningslänk innehåller dina val i sidans adress: dela den bara med dem du vill.</p>
+    <h2>3. Behandlingar</h2>
+    <h3>Webbvärdens loggar</h3>
+    <p>Webbvärden sparar vid varje besök IP-adress, datum och tid, begärd sida, webbläsare och hänvisande sida. Syfte: tjänstens säkerhet och felsökning. Rättslig grund: utgivarens berättigade intresse (artikel 6.1 f GDPR). Lagringstid: enligt webbvärdens regler.</p>
+    {GA4_ID ? (<>
+    <h3>Besöksstatistik med Google Analytics</h3>
+    <p>Webbplatsen använder Google Analytics 4 för att räkna besök och se vilka sidor som hjälper: visade sidor, hänvisande sida, besökets längd, enhet och webbläsare, ungefärligt land och ort. Google Analytics sätter två kakor: <code>_ga</code>, som skiljer besökare åt med ett slumpmässigt id, och <code>_ga_{GA4_ID.replace('G-', '')}</code>, som sparar besökets läge. Livslängden är högst 13 månader (390 dagar).</p>
+    <p>IP-adressen sparas inte av Google Analytics 4. Sidadressen som skickas saknar parametrar, så en delningslänks val följer inte med. Webbplatsen visar ingen reklam och Google-signaler är avstängda. Leverantör: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Rättslig grund: berättigat intresse (artikel 6.1 f GDPR).</p>
+    </>) : (<>
+    <h3>Ingen besöksstatistik</h3>
+    <p>Webbplatsen sätter inga kakor och använder inga analys- eller reklamverktyg.</p>
+    </>)}
+    {CLARITY_ID && (<>
+    <h3>Stabilitetsmätning med Microsoft Clarity, utan kakor</h3>
+    <p>För att hitta fel och långsamma sidor används Microsoft Clarity utan kakor; sidtext och det du skriver maskeras. Leverantör: Microsoft Ireland Operations Limited, Dublin. Rättslig grund: berättigat intresse (artikel 6.1 f GDPR).</p>
+    </>)}
+    <h3>Meddelanden till oss</h3>
+    <p>Skriver du till kontaktadressen sparas din e-postadress och ditt meddelande så länge som behövs för svaret och en eventuell rättelse, och raderas senast tre år efter senaste kontakten. Rättslig grund: berättigat intresse (artikel 6.1 f GDPR).</p>
+    <h2>4. Mottagare</h2>
+    <p>Uppgifter säljs, hyrs eller lämnas inte ut. Åtkomst har bara webbvärden{GA4_ID && ', Google Ireland Limited för Google Analytics'}{CLARITY_ID && ', Microsoft Ireland Operations Limited för Clarity'}, som personuppgiftsbiträden enligt artikel 28 GDPR.</p>
+    <h2>5. Överföring utanför EU</h2>
+    <p>Webbvärdens loggar kan behandlas i USA.{GA4_ID && ' Uppgifter från Google Analytics kan föras över till Google LLC i USA.'} Grunden är EU–USA-ramverket för dataskydd och EU-kommissionens standardavtalsklausuler.</p>
+    <h2>6. Dina rättigheter</h2>
+    <p>Du har rätt till tillgång, rättelse, radering, begränsning, invändning och dataportabilitet enligt artiklarna 15–22 GDPR. Skriv till <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>; vi svarar inom en månad. Utan konton har vi oftast inga uppgifter som identifierar dig, och då säger vi det.</p>
+    <p>Du kan klaga hos tillsynsmyndigheten: {LEGAL.supervisoryAuthority} (<a href={LEGAL.supervisoryAuthorityUrl} rel="nofollow noopener" target="_blank">{LEGAL.supervisoryAuthorityUrl}</a>), eller hos Integritetsskyddsmyndigheten i Sverige.</p>
+    <h2>7. Inget automatiserat beslut</h2>
+    <p>Ett beräkningsresultat tas fram på din begäran, i din webbläsare, och har ingen rättsverkan. Det är inget automatiserat beslut enligt artikel 22 GDPR, och ingen profilering sker.</p>
+    <p>Se även sidan <a href={route('cookies', lang)}>cookies</a>. Senast ändrad: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

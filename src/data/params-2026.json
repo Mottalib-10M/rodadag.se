@@ -1,0 +1,247 @@
+{
+ "_lisezmoi": "Paramètres datés du site suédois. Lois lues sur riksdagen.se le 2026-10-28 ; dates des röda dagar calculées par src/lib/engine (jamais tapées) ; lov lus sur le site de chaque kommun (data/lov.json).",
+ "year": 2026,
+ "retrieved_at": "2026-10-28",
+ "valid_from": "2026-01-01",
+ "valid_to": "2028-12-31",
+ "ar": [
+  2026,
+  2027,
+  2028
+ ],
+ "semester": {
+  "dagar": 25,
+  "sparaOver": 20,
+  "sparaAr": 5,
+  "huvudsemesterVeckor": 4
+ },
+ "skola": {
+  "skoldagar": 178,
+  "lovdagar": 12
+ },
+ "sommartid": {
+  "sfs": "2001:127",
+  "start": "sista söndagen i mars kl. 02:00 normaltid",
+  "slut": "sista söndagen i oktober kl. 03:00 sommartid"
+ },
+ "helgdagslagAndrad": "2004:1320",
+ "sources": {
+  "helgdagslag": {
+   "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-1989253-om-allmanna-helgdagar_sfs-1989-253/",
+   "label": {
+    "sv": "Lag (1989:253) om allmänna helgdagar, 1 och 2 §§",
+    "en": "Public Holidays Act (1989:253), sections 1 and 2"
+   }
+  },
+  "semesterlag": {
+   "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/semesterlag-1977480_sfs-1977-480/",
+   "label": {
+    "sv": "Semesterlag (1977:480), 3 a, 4, 12 och 18 §§",
+    "en": "Annual Leave Act (1977:480), sections 3a, 4, 12 and 18"
+   }
+  },
+  "lagstadgadtid": {
+   "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-1930173-om-berakning-av-lagstadgad-tid_sfs-1930-173/",
+   "label": {
+    "sv": "Lag (1930:173) om beräkning av lagstadgad tid, 2 §",
+    "en": "Act on Computing Statutory Time Limits (1930:173), section 2"
+   }
+  },
+  "sommartid": {
+   "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-2001127-om-sommartid_sfs-2001-127/",
+   "label": {
+    "sv": "Förordning (2001:127) om sommartid",
+    "en": "Summer Time Ordinance (2001:127)"
+   }
+  },
+  "skolforordning": {
+   "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/skolforordning-2011185_sfs-2011-185/",
+   "label": {
+    "sv": "Skolförordning (2011:185), 3 kap. 2 och 3 §§: läsår, terminer och lovdagar",
+    "en": "Education Ordinance (2011:185), chapter 3, sections 2 and 3: school year, terms and holiday days"
+   }
+  },
+  "arbetstidslag": {
+   "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/arbetstidslag-1982673_sfs-1982-673/",
+   "label": {
+    "sv": "Arbetstidslag (1982:673)",
+    "en": "Working Hours Act (1982:673)"
+   }
+  },
+  "pask-ptb": {
+   "url": "https://www.ptb.de/cms/ptb/fachabteilungen/abt4/fb-44/ag-441/darstellung-der-gesetzlichen-zeit/wann-ist-ostern.html",
+   "label": {
+    "sv": "Physikalisch-Technische Bundesanstalt: Gauss påskformel",
+    "en": "Physikalisch-Technische Bundesanstalt: Gauss's Easter formula"
+   }
+  },
+  "kommun-stockholm": {
+   "url": "https://www.stockholm.se/ForskolaSkola/Grundskola/Terminer-och-lov1/",
+   "label": {
+    "sv": "Stockholm kommun: läsårstider och lov",
+    "en": "Municipality of Stockholm: school terms and holidays"
+   }
+  },
+  "kommun-goteborg": {
+   "url": "https://goteborg.se/wps/portal/aktuelltarkiv?id=8c56b66d-3b2e-48a2-87d5-c57380c78409",
+   "label": {
+    "sv": "Göteborg kommun: läsårstider och lov",
+    "en": "Municipality of Göteborg: school terms and holidays"
+   }
+  },
+  "kommun-malmo": {
+   "url": "https://malmo.se/Bo-och-leva/Utbildning-och-forskola/Grundskola/For-elever-och-vardnadshavare-i-grundskolan/Lasar-och-lov-i-grundskolan.html",
+   "label": {
+    "sv": "Malmö kommun: läsårstider och lov",
+    "en": "Municipality of Malmö: school terms and holidays"
+   }
+  },
+  "kommun-uppsala": {
+   "url": "https://www.uppsala.se/skola-forskola-och-komvux/gymnasieskola/lasarstider-och-lov/lasarstider-for-grundskola-och-gymnasium/",
+   "label": {
+    "sv": "Uppsala kommun: läsårstider och lov",
+    "en": "Municipality of Uppsala: school terms and holidays"
+   }
+  },
+  "kommun-linkoping": {
+   "url": "https://www.linkoping.se/forskola-och-utbildning/grundskola/lov-och-lasarstider-for-grundskola-och-anpassad-grundskola",
+   "label": {
+    "sv": "Linköping kommun: läsårstider och lov",
+    "en": "Municipality of Linköping: school terms and holidays"
+   }
+  },
+  "kommun-orebro": {
+   "url": "https://www.orebro.se/barn--utbildning/lasarstider-for-grundskolor--gymnasieskolor.html",
+   "label": {
+    "sv": "Örebro kommun: läsårstider och lov",
+    "en": "Municipality of Örebro: school terms and holidays"
+   }
+  },
+  "kommun-vasteras": {
+   "url": "https://www.vasteras.se/barn-och-utbildning/grundskola/terminer-lov-och-ledigheter-i-grundskola.html",
+   "label": {
+    "sv": "Västerås kommun: läsårstider och lov",
+    "en": "Municipality of Västerås: school terms and holidays"
+   }
+  },
+  "kommun-helsingborg": {
+   "url": "https://helsingborg.se/forskola-och-utbildning/helsingborgs-stads-skolor/lasarstider-och-lov/",
+   "label": {
+    "sv": "Helsingborg kommun: läsårstider och lov",
+    "en": "Municipality of Helsingborg: school terms and holidays"
+   }
+  },
+  "kommun-norrkoping": {
+   "url": "https://norrkoping.se/skola-och-forskola/aktuellt/lov-och-lasarstider",
+   "label": {
+    "sv": "Norrköping kommun: läsårstider och lov",
+    "en": "Municipality of Norrköping: school terms and holidays"
+   }
+  },
+  "kommun-jonkoping": {
+   "url": "https://www.jonkoping.se/barn--utbildning/grundskola-anpassad-grundskola-och-fritidshem/lasarstider-lov-studiedagar-och-ledigheter-i-grundskola-och-anpassad-grundskola",
+   "label": {
+    "sv": "Jönköping kommun: läsårstider och lov",
+    "en": "Municipality of Jönköping: school terms and holidays"
+   }
+  },
+  "kommun-umea": {
+   "url": "https://www.umea.se/forskolaskolaochutbildning/grundskola/lasarstiderochlov.4.27a2de8b172da059ace1ee0.html",
+   "label": {
+    "sv": "Umeå kommun: läsårstider och lov",
+    "en": "Municipality of Umeå: school terms and holidays"
+   }
+  },
+  "kommun-lund": {
+   "url": "https://lund.se/forskola-och-skola/grundskola/lasar-och-lov-i-grundskolan",
+   "label": {
+    "sv": "Lund kommun: läsårstider och lov",
+    "en": "Municipality of Lund: school terms and holidays"
+   }
+  },
+  "kommun-boras": {
+   "url": "https://www.boras.se/utbildningochforskola/grundskola/lasarstiderochledighet.4.78ce08f715f682a938570344.html",
+   "label": {
+    "sv": "Borås kommun: läsårstider och lov",
+    "en": "Municipality of Borås: school terms and holidays"
+   }
+  },
+  "kommun-eskilstuna": {
+   "url": "https://www.eskilstuna.se/forskola-och-skola/lasar-lov-och-studiedagar",
+   "label": {
+    "sv": "Eskilstuna kommun: läsårstider och lov",
+    "en": "Municipality of Eskilstuna: school terms and holidays"
+   }
+  },
+  "kommun-gavle": {
+   "url": "https://www.gavle.se/kommunens-service/utbildning-och-barnomsorg/grundskola-och-anpassad-grundskola/lov-ledigheter-och-franvaro-inom-grundskola-och-anpassad-grundskola/lasarsdata/",
+   "label": {
+    "sv": "Gävle kommun: läsårstider och lov",
+    "en": "Municipality of Gävle: school terms and holidays"
+   }
+  },
+  "kommun-sodertalje": {
+   "url": "https://www.sodertalje.se/skola-och-forskola/lasarstider/",
+   "label": {
+    "sv": "Södertälje kommun: läsårstider och lov",
+    "en": "Municipality of Södertälje: school terms and holidays"
+   }
+  },
+  "kommun-karlstad": {
+   "url": "https://karlstad.se/forskola-skola-och-utbildning/grundskola/lasarstider-och-lov-i-grundskolan",
+   "label": {
+    "sv": "Karlstad kommun: läsårstider och lov",
+    "en": "Municipality of Karlstad: school terms and holidays"
+   }
+  },
+  "kommun-taby": {
+   "url": "https://www.taby.se/forskola-och-skola/grundskola/lasarstider-och-lov-grundskolor",
+   "label": {
+    "sv": "Täby kommun: läsårstider och lov",
+    "en": "Municipality of Täby: school terms and holidays"
+   }
+  },
+  "kommun-halmstad": {
+   "url": "https://www.halmstad.se/barnochutbildning/grundskolaochfritidshem/grundskolanslasarstiderochlov.n1386.html",
+   "label": {
+    "sv": "Halmstad kommun: läsårstider och lov",
+    "en": "Municipality of Halmstad: school terms and holidays"
+   }
+  },
+  "kommun-vaxjo": {
+   "url": "https://vaxjo.se/sidor/forskola-och-skola/skola-6---16-ar/lasarstider-grundskola.html",
+   "label": {
+    "sv": "Växjö kommun: läsårstider och lov",
+    "en": "Municipality of Växjö: school terms and holidays"
+   }
+  },
+  "kommun-sundsvall": {
+   "url": "https://sundsvall.se/kommun/utbildning-och-forskola/grundskola/lasarstider-och-lov",
+   "label": {
+    "sv": "Sundsvall kommun: läsårstider och lov",
+    "en": "Municipality of Sundsvall: school terms and holidays"
+   }
+  },
+  "kommun-huddinge": {
+   "url": "https://www.huddinge.se/forskola-skola/grundskola/lov-grundskolan",
+   "label": {
+    "sv": "Huddinge kommun: läsårstider och lov",
+    "en": "Municipality of Huddinge: school terms and holidays"
+   }
+  },
+  "kommun-nacka": {
+   "url": "https://www.nacka.se/valfard-skola/nackas-kommunala-skolor/vara-verksamheter/terminer-och-lov/",
+   "label": {
+    "sv": "Nacka kommun: läsårstider och lov",
+    "en": "Municipality of Nacka: school terms and holidays"
+   }
+  },
+  "kommun-lulea": {
+   "url": "https://www.lulea.se/utbildning--forskola/lov-lasar-ledigheter.html",
+   "label": {
+    "sv": "Luleå kommun: läsårstider och lov",
+    "en": "Municipality of Luleå: school terms and holidays"
+   }
+  }
+ }
+}

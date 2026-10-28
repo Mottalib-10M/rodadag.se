@@ -1,0 +1,29 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CLARITY_ID, CONTACT_EMAIL, GA4_ID, LAST_UPDATED, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'sv';
+const title = `Cookies på ${SITE_NAMES[lang]}: vilka kakor och varför`;
+const description = GA4_ID ? 'Kakor för besöksstatistik från Google Analytics och inga andra: namn, syfte, livslängd på högst 13 månader, leverantör och hur du säger nej.' : 'Webbplatsen sätter inga kakor: det du skriver stannar i din webbläsare och ingenting sparas på din enhet.';
+---
+<PageLayout title={title} description={description} lang={lang} noindex={true} breadcrumbs={[{ label: 'Cookies' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Cookies</h1>
+    {GA4_ID ? (<>
+    <p>Webbplatsen sätter kakor för besöksstatistik från Google Analytics och inga andra: inga reklamkakor och inga kakor från sociala medier. Detaljer finns i <a href={route('privacy', lang)}>integritetspolicyn</a>.</p>
+    <h2>Kakor som sätts</h2>
+    <table><thead><tr><th>Namn</th><th>Leverantör</th><th>Syfte</th><th>Livslängd</th></tr></thead><tbody>
+    <tr><td><code>_ga</code></td><td>Google Analytics</td><td>Skilja besökare åt med ett slumpmässigt id</td><td>högst 13 månader (390 dagar)</td></tr>
+    <tr><td><code>_ga_{GA4_ID.replace('G-', '')}</code></td><td>Google Analytics</td><td>Spara läget i det pågående besöket</td><td>högst 13 månader (390 dagar)</td></tr>
+    </tbody></table>
+    <h2>Säga nej</h2>
+    <p>Blockera eller radera kakor i webbläsarens inställningar, eller installera <a href="https://tools.google.com/dlpage/gaoptout" rel="nofollow noopener" target="_blank">tillägget som stänger av Google Analytics</a>. Webbplatsen och verktygen fungerar lika bra.</p>
+    </>) : (<>
+    <p>Webbplatsen <strong>sätter inga kakor</strong>. Detaljer finns i <a href={route('privacy', lang)}>integritetspolicyn</a>.</p>
+    </>)}
+    {CLARITY_ID && (<><h2>Microsoft Clarity, utan kakor</h2><p>Sidornas stabilitet mäts med Microsoft Clarity utan kakor; sidinnehåll och det du skriver maskeras. Den som blockerar <code>clarity.ms</code> stoppar mätningen.</p></>)}
+    <h2>Det du skriver</h2>
+    <p>Beräkningarna sker i din webbläsare: det du skriver skickas inte till någon server och försvinner när du stänger sidan.</p>
+    <p>Frågor: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Senast ändrad: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

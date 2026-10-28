@@ -1,0 +1,32 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { route } from '../../i18n/routes';
+import { AUTHOR_NAME, AUTHOR_DESC, CONTACT_EMAIL, SITE_NAMES } from '../../data/site-config';
+import { srcLink } from '../../lib/helpers';
+import { profilePageSchema, breadcrumbSchema } from '../../lib/seo';
+const lang = 'sv';
+const path = route('about', lang);
+const title = 'SE Röda dagar: utgivare, källor och oberoende i Sverige';
+const description = 'Vem som ger ut SE Röda dagar: Radif Partners, oberoende och utan reseerbjudanden. Var röda dagar, aftnar, semesterregler och skollov per kommun kommer ifrån.';
+const s = (k: string, t: string) => srcLink(k, lang, t);
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[profilePageSchema({ path, lang }), breadcrumbSchema([{ name: 'Start', path: route('home', lang) }, { name: 'Om oss', path }])]} breadcrumbs={[{ label: 'Om oss' }]}>
+  <article class="prose prose-slate max-w-none">
+    <h1>Om {SITE_NAMES[lang]}</h1>
+    <p>{AUTHOR_DESC.sv}</p>
+    <h2>Varför sidan finns</h2>
+    <p>På hösten lämnar många in sina semesterönskemål för nästa år och letar efter klämdagarna. De vanliga listorna räknar upp de röda dagarna, men säger inte hur ett visst antal semesterdagar ska läggas för att ge mest ledigt, blandar ihop helgdagar med aftnar, eller saknar nästa års datum. Den här sidan räknar fram allt ur lagtexten, för tre år framåt, och visar skollov bara när kommunen själv har publicerat dem.</p>
+    <h2>Vem som ger ut den</h2>
+    <p>Utgivare är {AUTHOR_NAME}, ett företag som bygger verktyg av offentliga regler. {AUTHOR_NAME} är ingen myndighet, kommun eller fackförening, har ingen koppling till regeringen och använder inga vapen eller myndighetslogotyper. Sidan säljer inga resor, hotell eller almanackor och har inga partnerlänkar.</p>
+    <LegalIdentity lang={lang} />
+    <h2>Var uppgifterna kommer ifrån</h2>
+    <p>Helgdagarna står i <Fragment set:html={s('helgdagslag', 'lagen (1989:253) om allmänna helgdagar')} />, reglerna om semesterdagar i <Fragment set:html={s('semesterlag', 'semesterlagen (1977:480)')} />, regeln om frister i <Fragment set:html={s('lagstadgadtid', 'lagen (1930:173) om beräkning av lagstadgad tid')} /> och sommartiden i <Fragment set:html={s('sommartid', 'förordningen (2001:127) om sommartid')} />. Läsåret regleras i <Fragment set:html={s('skolforordning', 'skolförordningen')} />, och varje lovdatum kommer från kommunens egen sida, till exempel <Fragment set:html={s('kommun-stockholm', 'Stockholms stads läsårstider')} />. Hur vi räknar står under <a href={route('method', lang)}>beräkningsmetoder</a>; hur vi rättar i de <a href={route('editorial', lang)}>redaktionella principerna</a>.</p>
+    <h2>Dina uppgifter</h2>
+    <p>Alla verktyg körs i din webbläsare. År, semesterdagar, datum och kommun skickas inte och sparas inte. Det finns inget konto och inget formulär. Detaljer i <a href={route('privacy', lang)}>integritetspolicyn</a>.</p>
+    <h2>Vad sidan inte gör</h2>
+    <p>Den beviljar ingen semester och känner inte till ditt kollektivavtal. Om aftnarna är lediga hos dig står i ditt avtal; vilka studiedagar en skola har vet skolan.</p>
+    <h2>Skriv till oss</h2>
+    <p><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> om en röd dag, ett lovdatum eller ett veckonummer inte stämmer.</p>
+  </article>
+</PageLayout>

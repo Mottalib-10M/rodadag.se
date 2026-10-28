@@ -1,0 +1,20 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CONTACT_EMAIL, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { contactPageSchema } from '../../lib/seo';
+const lang = 'sv';
+const description = 'Skriv till oss om en röd dag, ett lovdatum eller en klämdag inte stämmer, eller om du vill bädda in semesterplaneraren på din egen webbplats.';
+---
+<PageLayout title={`Kontakt med ${SITE_NAMES[lang]}: rapportera fel, bädda in`} description={description} lang={lang} noindex={true} jsonLd={[contactPageSchema({ name: 'Kontakt', description, path: route('contact', lang), lang })]} breadcrumbs={[{ label: 'Kontakt' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Kontakt</h1>
+    <p>E-post: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Vi svarar oftast inom en vecka.</p>
+    <h2>Ett datum verkar fel</h2>
+    <p>Ange sidan, året och gärna källan: lagrummet hos Riksdagen eller kommunens beslut om läsårstider. Vi kontrollerar mot källan och rättar inom några dagar.</p>
+    <h2>Bädda in planeraren</h2>
+    <p>Fackklubbar, personalavdelningar, föräldraföreningar och lokaltidningar kan bädda in semesterplaneraren och listan över röda dagar gratis: <a href={route('widget', lang)}>bädda in</a>.</p>
+    <h2>Vad vi inte gör</h2>
+    <p>Vi ger ingen juridisk rådgivning om semesteransökningar, svarar inte på frågor om en viss skolas studiedagar och bokar inga resor.</p>
+  </div>
+</PageLayout>

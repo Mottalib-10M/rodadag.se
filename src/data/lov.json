@@ -1,0 +1,690 @@
+{
+ "_lisezmoi": "Lov 2026/27 des 24 plus grandes kommuner, chacun lu sur le site officiel de la kommun le 2026-10-28 (url). Dates = lundi-vendredi sans école tels que publiés.",
+ "retrieved_at": "2026-10-28",
+ "kommuner": [
+  {
+   "id": "stockholm",
+   "name": "Stockholm",
+   "lan": "Stockholms län",
+   "url": "https://www.stockholm.se/ForskolaSkola/Grundskola/Terminer-och-lov1/",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-18",
+   "vartermin_start": "2027-01-11",
+   "sportlov2027": [
+    "2027-03-01",
+    "2027-03-05"
+   ],
+   "sportlov_vecka": 9,
+   "pasklov2027": [
+    "2027-03-30",
+    "2027-04-02"
+   ],
+   "vartermin_slut": "2027-06-11",
+   "sportlov2028": [
+    "2028-02-28",
+    "2028-03-03"
+   ],
+   "hostlov2027": [
+    "2027-11-01",
+    "2027-11-05"
+   ]
+  },
+  {
+   "id": "goteborg",
+   "name": "Göteborg",
+   "lan": "Västra Götalands län",
+   "url": "https://goteborg.se/wps/portal/aktuelltarkiv?id=8c56b66d-3b2e-48a2-87d5-c57380c78409",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-18",
+   "vartermin_start": "2027-01-11",
+   "sportlov2027": [
+    "2027-02-15",
+    "2027-02-19"
+   ],
+   "sportlov_vecka": 7,
+   "pasklov2027": [
+    "2027-03-26",
+    "2027-04-02"
+   ],
+   "vartermin_slut": "2027-06-10",
+   "sportlov2028": [
+    "2028-02-14",
+    "2028-02-18"
+   ],
+   "hostlov2027": [
+    "2027-11-01",
+    "2027-11-05"
+   ]
+  },
+  {
+   "id": "malmo",
+   "name": "Malmö",
+   "lan": "Skåne län",
+   "url": "https://malmo.se/Bo-och-leva/Utbildning-och-forskola/Grundskola/For-elever-och-vardnadshavare-i-grundskolan/Lasar-och-lov-i-grundskolan.html",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-22",
+   "vartermin_start": "2027-01-11",
+   "sportlov2027": [
+    "2027-02-22",
+    "2027-02-26"
+   ],
+   "sportlov_vecka": 8,
+   "pasklov2027": [
+    "2027-03-22",
+    "2027-03-26"
+   ],
+   "vartermin_slut": "2027-06-11",
+   "sportlov2028": null,
+   "hostlov2027": null
+  },
+  {
+   "id": "uppsala",
+   "name": "Uppsala",
+   "lan": "Uppsala län",
+   "url": "https://www.uppsala.se/skola-forskola-och-komvux/gymnasieskola/lasarstider-och-lov/lasarstider-for-grundskola-och-gymnasium/",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-22",
+   "vartermin_start": "2027-01-13",
+   "sportlov2027": [
+    "2027-02-22",
+    "2027-02-26"
+   ],
+   "sportlov_vecka": 8,
+   "pasklov2027": [
+    "2027-03-30",
+    "2027-04-02"
+   ],
+   "vartermin_slut": "2027-06-10",
+   "sportlov2028": [
+    "2028-02-21",
+    "2028-02-25"
+   ],
+   "hostlov2027": [
+    "2027-11-01",
+    "2027-11-05"
+   ]
+  },
+  {
+   "id": "linkoping",
+   "name": "Linköping",
+   "lan": "Östergötlands län",
+   "url": "https://www.linkoping.se/forskola-och-utbildning/grundskola/lov-och-lasarstider-for-grundskola-och-anpassad-grundskola",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-18",
+   "vartermin_start": "2027-01-07",
+   "sportlov2027": [
+    "2027-02-22",
+    "2027-02-26"
+   ],
+   "sportlov_vecka": 8,
+   "pasklov2027": [
+    "2027-03-29",
+    "2027-04-02"
+   ],
+   "vartermin_slut": "2027-06-10",
+   "sportlov2028": [
+    "2028-02-21",
+    "2028-02-25"
+   ],
+   "hostlov2027": [
+    "2027-11-01",
+    "2027-11-05"
+   ]
+  },
+  {
+   "id": "orebro",
+   "name": "Örebro",
+   "lan": "Örebro län",
+   "url": "https://www.orebro.se/barn--utbildning/lasarstider-for-grundskolor--gymnasieskolor.html",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-22",
+   "vartermin_start": "2027-01-11",
+   "sportlov2027": [
+    "2027-02-22",
+    "2027-02-26"
+   ],
+   "sportlov_vecka": 8,
+   "pasklov2027": [
+    "2027-03-22",
+    "2027-03-29"
+   ],
+   "vartermin_slut": "2027-06-10",
+   "sportlov2028": null,
+   "hostlov2027": null
+  },
+  {
+   "id": "vasteras",
+   "name": "Västerås",
+   "lan": "Västmanlands län",
+   "url": "https://www.vasteras.se/barn-och-utbildning/grundskola/terminer-lov-och-ledigheter-i-grundskola.html",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-18",
+   "vartermin_start": "2027-01-11",
+   "sportlov2027": [
+    "2027-03-01",
+    "2027-03-05"
+   ],
+   "sportlov_vecka": 9,
+   "pasklov2027": [
+    "2027-03-30",
+    "2027-04-02"
+   ],
+   "vartermin_slut": "2027-06-10",
+   "sportlov2028": [
+    "2028-02-28",
+    "2028-03-03"
+   ],
+   "hostlov2027": [
+    "2027-11-01",
+    "2027-11-05"
+   ]
+  },
+  {
+   "id": "helsingborg",
+   "name": "Helsingborg",
+   "lan": "Skåne län",
+   "url": "https://helsingborg.se/forskola-och-utbildning/helsingborgs-stads-skolor/lasarstider-och-lov/",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-22",
+   "vartermin_start": "2027-01-11",
+   "sportlov2027": [
+    "2027-02-22",
+    "2027-02-26"
+   ],
+   "sportlov_vecka": 8,
+   "pasklov2027": [
+    "2027-03-22",
+    "2027-03-25"
+   ],
+   "vartermin_slut": "2027-06-10",
+   "sportlov2028": [
+    "2028-02-21",
+    "2028-02-25"
+   ],
+   "hostlov2027": [
+    "2027-11-01",
+    "2027-11-05"
+   ]
+  },
+  {
+   "id": "norrkoping",
+   "name": "Norrköping",
+   "lan": "Östergötlands län",
+   "url": "https://norrkoping.se/skola-och-forskola/aktuellt/lov-och-lasarstider",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-18",
+   "vartermin_start": "2027-01-07",
+   "sportlov2027": [
+    "2027-02-22",
+    "2027-02-26"
+   ],
+   "sportlov_vecka": 8,
+   "pasklov2027": [
+    "2027-03-30",
+    "2027-04-02"
+   ],
+   "vartermin_slut": "2027-06-10",
+   "sportlov2028": [
+    "2028-02-21",
+    "2028-02-25"
+   ],
+   "hostlov2027": [
+    "2027-11-01",
+    "2027-11-05"
+   ]
+  },
+  {
+   "id": "jonkoping",
+   "name": "Jönköping",
+   "lan": "Jönköpings län",
+   "url": "https://www.jonkoping.se/barn--utbildning/grundskola-anpassad-grundskola-och-fritidshem/lasarstider-lov-studiedagar-och-ledigheter-i-grundskola-och-anpassad-grundskola",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-22",
+   "vartermin_start": "2027-01-11",
+   "sportlov2027": [
+    "2027-02-15",
+    "2027-02-19"
+   ],
+   "sportlov_vecka": 7,
+   "pasklov2027": [
+    "2027-03-29",
+    "2027-04-02"
+   ],
+   "vartermin_slut": "2027-06-10",
+   "sportlov2028": [
+    "2028-02-14",
+    "2028-02-18"
+   ],
+   "hostlov2027": [
+    "2027-11-01",
+    "2027-11-05"
+   ]
+  },
+  {
+   "id": "umea",
+   "name": "Umeå",
+   "lan": "Västerbottens län",
+   "url": "https://www.umea.se/forskolaskolaochutbildning/grundskola/lasarstiderochlov.4.27a2de8b172da059ace1ee0.html",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-18",
+   "vartermin_start": "2027-01-11",
+   "sportlov2027": [
+    "2027-03-08",
+    "2027-03-12"
+   ],
+   "sportlov_vecka": 10,
+   "pasklov2027": [
+    "2027-03-30",
+    "2027-04-02"
+   ],
+   "vartermin_slut": "2027-06-09",
+   "sportlov2028": null,
+   "hostlov2027": null
+  },
+  {
+   "id": "lund",
+   "name": "Lund",
+   "lan": "Skåne län",
+   "url": "https://lund.se/forskola-och-skola/grundskola/lasar-och-lov-i-grundskolan",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-18",
+   "vartermin_start": "2027-01-07",
+   "sportlov2027": [
+    "2027-02-22",
+    "2027-02-26"
+   ],
+   "sportlov_vecka": 8,
+   "pasklov2027": [
+    "2027-03-22",
+    "2027-03-25"
+   ],
+   "vartermin_slut": "2027-06-11",
+   "sportlov2028": null,
+   "hostlov2027": null
+  },
+  {
+   "id": "boras",
+   "name": "Borås",
+   "lan": "Västra Götalands län",
+   "url": "https://www.boras.se/utbildningochforskola/grundskola/lasarstiderochledighet.4.78ce08f715f682a938570344.html",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-18",
+   "vartermin_start": "2027-01-11",
+   "sportlov2027": [
+    "2027-02-15",
+    "2027-02-19"
+   ],
+   "sportlov_vecka": 7,
+   "pasklov2027": [
+    "2027-03-26",
+    "2027-04-02"
+   ],
+   "vartermin_slut": "2027-06-11",
+   "sportlov2028": [
+    "2028-02-14",
+    "2028-02-18"
+   ],
+   "hostlov2027": [
+    "2027-11-01",
+    "2027-11-05"
+   ]
+  },
+  {
+   "id": "eskilstuna",
+   "name": "Eskilstuna",
+   "lan": "Södermanlands län",
+   "url": "https://www.eskilstuna.se/forskola-och-skola/lasar-lov-och-studiedagar",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-18",
+   "vartermin_start": "2027-01-13",
+   "sportlov2027": [
+    "2027-02-22",
+    "2027-02-26"
+   ],
+   "sportlov_vecka": 8,
+   "pasklov2027": [
+    "2027-03-25",
+    "2027-04-02"
+   ],
+   "vartermin_slut": "2027-06-11",
+   "sportlov2028": null,
+   "hostlov2027": null
+  },
+  {
+   "id": "gavle",
+   "name": "Gävle",
+   "lan": "Gävleborgs län",
+   "url": "https://www.gavle.se/kommunens-service/utbildning-och-barnomsorg/grundskola-och-anpassad-grundskola/lov-ledigheter-och-franvaro-inom-grundskola-och-anpassad-grundskola/lasarsdata/",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-22",
+   "vartermin_start": "2027-01-07",
+   "sportlov2027": [
+    "2027-03-01",
+    "2027-03-05"
+   ],
+   "sportlov_vecka": 9,
+   "pasklov2027": [
+    "2027-03-30",
+    "2027-04-02"
+   ],
+   "vartermin_slut": "2027-06-08",
+   "sportlov2028": null,
+   "hostlov2027": null
+  },
+  {
+   "id": "sodertalje",
+   "name": "Södertälje",
+   "lan": "Stockholms län",
+   "url": "https://www.sodertalje.se/skola-och-forskola/lasarstider/",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-18",
+   "vartermin_start": "2027-01-12",
+   "sportlov2027": [
+    "2027-03-01",
+    "2027-03-05"
+   ],
+   "sportlov_vecka": 9,
+   "pasklov2027": [
+    "2027-03-29",
+    "2027-04-02"
+   ],
+   "vartermin_slut": "2027-06-11",
+   "sportlov2028": null,
+   "hostlov2027": null
+  },
+  {
+   "id": "karlstad",
+   "name": "Karlstad",
+   "lan": "Värmlands län",
+   "url": "https://karlstad.se/forskola-skola-och-utbildning/grundskola/lasarstider-och-lov-i-grundskolan",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-18",
+   "vartermin_start": "2027-01-11",
+   "sportlov2027": [
+    "2027-03-01",
+    "2027-03-05"
+   ],
+   "sportlov_vecka": 9,
+   "pasklov2027": [
+    "2027-03-30",
+    "2027-04-02"
+   ],
+   "vartermin_slut": "2027-06-10",
+   "sportlov2028": [
+    "2028-02-28",
+    "2028-03-03"
+   ],
+   "hostlov2027": [
+    "2027-11-01",
+    "2027-11-05"
+   ]
+  },
+  {
+   "id": "taby",
+   "name": "Täby",
+   "lan": "Stockholms län",
+   "url": "https://www.taby.se/forskola-och-skola/grundskola/lasarstider-och-lov-grundskolor",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-18",
+   "vartermin_start": "2027-01-11",
+   "sportlov2027": [
+    "2027-03-01",
+    "2027-03-05"
+   ],
+   "sportlov_vecka": 9,
+   "pasklov2027": [
+    "2027-03-29",
+    "2027-04-02"
+   ],
+   "vartermin_slut": "2027-06-10",
+   "sportlov2028": null,
+   "hostlov2027": null
+  },
+  {
+   "id": "halmstad",
+   "name": "Halmstad",
+   "lan": "Hallands län",
+   "url": "https://www.halmstad.se/barnochutbildning/grundskolaochfritidshem/grundskolanslasarstiderochlov.n1386.html",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-18",
+   "vartermin_start": "2027-01-11",
+   "sportlov2027": [
+    "2027-02-22",
+    "2027-02-26"
+   ],
+   "sportlov_vecka": 8,
+   "pasklov2027": [
+    "2027-03-30",
+    "2027-04-02"
+   ],
+   "vartermin_slut": "2027-06-15",
+   "sportlov2028": null,
+   "hostlov2027": null
+  },
+  {
+   "id": "vaxjo",
+   "name": "Växjö",
+   "lan": "Kronobergs län",
+   "url": "https://vaxjo.se/sidor/forskola-och-skola/skola-6---16-ar/lasarstider-grundskola.html",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-22",
+   "vartermin_start": "2027-01-12",
+   "sportlov2027": [
+    "2027-02-22",
+    "2027-02-26"
+   ],
+   "sportlov_vecka": 8,
+   "pasklov2027": [
+    "2027-03-29",
+    "2027-04-02"
+   ],
+   "vartermin_slut": "2027-06-11",
+   "sportlov2028": [
+    "2028-02-21",
+    "2028-02-25"
+   ],
+   "hostlov2027": [
+    "2027-11-01",
+    "2027-11-05"
+   ]
+  },
+  {
+   "id": "sundsvall",
+   "name": "Sundsvall",
+   "lan": "Västernorrlands län",
+   "url": "https://sundsvall.se/kommun/utbildning-och-forskola/grundskola/lasarstider-och-lov",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-22",
+   "vartermin_start": "2027-01-11",
+   "sportlov2027": [
+    "2027-03-08",
+    "2027-03-12"
+   ],
+   "sportlov_vecka": 10,
+   "pasklov2027": [
+    "2027-03-30",
+    "2027-04-02"
+   ],
+   "vartermin_slut": "2027-06-11",
+   "sportlov2028": null,
+   "hostlov2027": null
+  },
+  {
+   "id": "huddinge",
+   "name": "Huddinge",
+   "lan": "Stockholms län",
+   "url": "https://www.huddinge.se/forskola-skola/grundskola/lov-grundskolan",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-17",
+   "vartermin_start": "2027-01-12",
+   "sportlov2027": [
+    "2027-03-01",
+    "2027-03-05"
+   ],
+   "sportlov_vecka": 9,
+   "pasklov2027": [
+    "2027-03-30",
+    "2027-04-02"
+   ],
+   "vartermin_slut": "2027-06-10",
+   "sportlov2028": [
+    "2028-02-28",
+    "2028-03-03"
+   ],
+   "hostlov2027": [
+    "2027-11-01",
+    "2027-11-05"
+   ]
+  },
+  {
+   "id": "nacka",
+   "name": "Nacka",
+   "lan": "Stockholms län",
+   "url": "https://www.nacka.se/valfard-skola/nackas-kommunala-skolor/vara-verksamheter/terminer-och-lov/",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-18",
+   "vartermin_start": "2027-01-12",
+   "sportlov2027": [
+    "2027-03-01",
+    "2027-03-05"
+   ],
+   "sportlov_vecka": 9,
+   "pasklov2027": [
+    "2027-03-30",
+    "2027-04-02"
+   ],
+   "vartermin_slut": "2027-06-10",
+   "sportlov2028": [
+    "2028-02-28",
+    "2028-03-03"
+   ],
+   "hostlov2027": [
+    "2027-11-01",
+    "2027-11-05"
+   ]
+  },
+  {
+   "id": "lulea",
+   "name": "Luleå",
+   "lan": "Norrbottens län",
+   "url": "https://www.lulea.se/utbildning--forskola/lov-lasar-ledigheter.html",
+   "status": "beslutad",
+   "hostlov2026": [
+    "2026-10-26",
+    "2026-10-30"
+   ],
+   "hosttermin_slut": "2026-12-22",
+   "vartermin_start": "2027-01-13",
+   "sportlov2027": [
+    "2027-03-01",
+    "2027-03-05"
+   ],
+   "sportlov_vecka": 9,
+   "pasklov2027": [
+    "2027-03-30",
+    "2027-04-02"
+   ],
+   "vartermin_slut": "2027-06-11",
+   "sportlov2028": [
+    "2028-03-06",
+    "2028-03-10"
+   ],
+   "hostlov2027": [
+    "2027-11-01",
+    "2027-11-05"
+   ]
+  }
+ ]
+}

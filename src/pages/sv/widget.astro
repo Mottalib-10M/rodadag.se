@@ -1,0 +1,29 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { SITE_URL } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { breadcrumbSchema } from '../../lib/seo';
+const lang = 'sv';
+const code = (name: string, t: string, h: number) => `<iframe src="${SITE_URL}/embed/${lang}/${name}/" title="${t}" width="100%" height="${h}" style="border:0;max-width:1100px" loading="lazy"></iframe>`;
+const items = [
+  { name: 'semesterplanerare', h2: 'Semesterplaneraren', text: 'År och antal semesterdagar: läsarna ser den bästa planen och alla klämdagar under året, med aftnarna som val.', t: 'Semesterplanerare', h: 980 },
+  { name: 'roda-dagar', h2: 'Röda dagar', text: 'De tretton allmänna helgdagarna 2025 till 2030 med veckodag och veckonummer, och aftnarna om man vill.', t: 'Röda dagar i Sverige', h: 900 },
+];
+---
+<PageLayout title="Bädda in SE Röda dagar gratis: planerare och röda dagar" description="Bädda in semesterplaneraren och listan över röda dagar gratis med en iframe: kopiera koden, så kommer nya år och ändrade regler med automatiskt." lang={lang} noindex={true} jsonLd={[breadcrumbSchema([{ name: 'Start', path: route('home', lang) }, { name: 'Widget', path: route('widget', lang) }])]} breadcrumbs={[{ label: 'Widget' }]} showAuthor={false}>
+  <header class="mb-6">
+    <h1 class="text-3xl font-bold text-navy-900 md:text-4xl">Bädda in SE Röda dagar</h1>
+    <p class="mt-3 text-lg text-navy-700">För fackklubbar, personalavdelningar, föräldraföreningar och lokaltidningar: kopiera en gång, nya år kommer automatiskt.</p>
+  </header>
+  <div class="prose prose-slate max-w-none">
+    {items.map((i) => (<>
+      <h2>{i.h2}</h2>
+      <p>{i.text}</p>
+      <pre class="overflow-x-auto rounded-lg bg-navy-900 p-4 text-sm text-white"><code>{code(i.name, i.t, i.h)}</code></pre>
+    </>))}
+    <p>För den engelska versionen byter du <code>/embed/sv/</code> mot <code>/embed/en/</code>. Villkor: källänken under verktyget får synas, verktyget ändras inte och tillhandahålls utan garanti. Det läsarna skriver stannar på deras enhet. Frågor via <a href={route('contact', lang)}>kontaktsidan</a>.</p>
+  </div>
+  <div class="mt-8 overflow-hidden rounded-xl border border-navy-200">
+    <iframe src={`/embed/${lang}/semesterplanerare/`} title="Semesterplanerare" width="100%" height="980" style="border:0" loading="lazy"></iframe>
+  </div>
+</PageLayout>
